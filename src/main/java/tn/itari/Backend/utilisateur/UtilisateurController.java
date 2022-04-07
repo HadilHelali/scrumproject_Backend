@@ -1,4 +1,4 @@
-package tn.itari.Backend;
+package tn.itari.Backend.utilisateur;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
