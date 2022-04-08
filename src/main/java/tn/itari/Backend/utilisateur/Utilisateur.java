@@ -1,4 +1,4 @@
-package tn.itari.Backend;
+package tn.itari.Backend.utilisateur;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,8 +13,8 @@ public class Utilisateur {
     @GeneratedValue
     Integer id;
     String name ; 
-    String email;
-    String password;
+    public String email;
+    public String password;
 
 
 }
