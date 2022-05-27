@@ -4,6 +4,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 import lombok.Data;
 
 @Entity
@@ -16,7 +17,9 @@ public class train {
     Date Departure;
     Date Arrival;
     String Type;
-
+    Integer stationDep ;
+    Integer stationArr ;
+    Integer Line ;
 }
 
 
