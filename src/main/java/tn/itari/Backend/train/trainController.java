@@ -26,4 +26,11 @@ public class trainController {
        List<train> trains = this.trainRepository.findByType(type);
        return trains ;
    }
+
+   @GetMapping("/search")
+   public List<train> searchTrain(@RequestParam(name = "date")String date,@RequestParam(name = "type")String type,
+   @RequestParam(name = "depStat")Integer depStat,@RequestParam(name = "arrStat")Integer arrStat){
+       List<train> trains = this.trainRepository.searchTrains(type, depStat, arrStat, date);
+       return trains ;
+   }
 }
