@@ -1,10 +1,10 @@
 package tn.itari.Backend.utilisateur;
 
+import java.io.Console;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,9 +22,9 @@ public class UtilisateurController {
         return utilisateurRepository.save(user);
     }
     @PostMapping("/login")
-    public Utilisateur Login(@RequestBody Utilisateur user) {
+    public String Login(@RequestBody Utilisateur user) {
         Utilisateur oldUSer = utilisateurRepository.findByEmailAndPassword(user.email, user.password);
-        return oldUSer;
+        return oldUSer.name;
     }
 
     @GetMapping("/userInfo")
