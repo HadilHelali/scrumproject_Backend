@@ -24,7 +24,8 @@ public class UtilisateurController {
     @PostMapping("/login")
     public String Login(@RequestBody Utilisateur user) {
         Utilisateur oldUSer = utilisateurRepository.findByEmailAndPassword(user.email, user.password);
-        return oldUSer.name;
+        if (oldUSer!= null) return oldUSer.name ;
+        return "";
     }
 
     @GetMapping("/userInfo")
